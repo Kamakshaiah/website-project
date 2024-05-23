@@ -1,0 +1,28 @@
+{% extends 'home/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block home %}
+<div >
+    <!-- <img style="background-image: url('https://source.unsplash.com/1280x450/?technology'); width: 1280px; height: 450px;opacity: 0.8; "> -->
+
+    <div class="container mt-5 mb-5 d-flex align-items-center justify-content-center">
+        <div class="card" style="width: 25rem;">
+            <img class="card-img-top" src="https://source.unsplash.com/1280x450/?registration" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">User Registration</h5>
+              <form action="" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  {{ form | crispy }}
+                  <input class="btn btn-primary m-2" type="submit">
+              </form>
+              <hr>
+              <p> <small> Got account? Go to <a href="{% url 'login' %}" class="text-decoration-none">Login</a> page.</small> </p>
+              
+            </div>
+          </div>
+    </div>
+    
+   
+</div>
+{% endblock %}

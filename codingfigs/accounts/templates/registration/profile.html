@@ -1,0 +1,69 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block home %}
+<div class="container">
+    <!-- <img style="background-image: url('https://source.unsplash.com/1280x450/?technology'); width: 1280px; height: 450px;opacity: 0.8; "> -->
+
+    <div class="mt-5 mb-5 d-flex">
+        <div class="container card">
+
+            {% if user %}
+            <div class="row">
+                <div class="col">
+                    <div class=" text-center">
+                        <img class=" img-fluid rounded-circle border w-25 h-50 m-5" src="{{ user.image.url }}"
+                            alt="user image">
+                    </div>
+
+                </div>
+                <div class="col">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Profile Name</td>
+                                <td>Profile Property</td>
+                                <td>Change</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>Id</td>
+                                <td scope="row">{{user.id}}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>First Name</td>
+                                <td scope="row">{{user.firstname}}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Last Name</td>
+                                <td scope="row">{{user.lastname}}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td scope="row">{{user.email}}</td>
+                                <td><a class="text-decoration-none" href="#">Verify email...</a></td>
+                            </tr>
+                            <tr>
+                                <td>Phone</td>
+                                <td scope="row">{{user.phone}}</td>
+                                <td><a class="text-decoration-none" href="#">Verify phone number...</a></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

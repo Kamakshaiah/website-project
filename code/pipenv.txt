@@ -1,0 +1,26 @@
+# https://realpython.com/pipenv-guide/
+
+pip install pipenv
+pipenv shell
+pipenv install flask==0.12.1 [using version number]
+pipenv install numpy [no version]
+
+pipenv install -e git+https://github.com/requests/requests.git#egg=requests
+pipenv install pytest --dev [only for development, not required for production]
+
+pipenv lock [finalizing]
+pipenv install --ignore-pipfile [installing requirements in production env.]
+
+pipenv install --dev [dev dependencies after pulling by the other developer]
+
+pipenv install --skip-lock [run if there are any conflicts in sub-dependencies]
+pipenv graph [inspection for conflicts]
+
+# Pipenv Extra Features
+
+pipenv open flask EDITOR=subl.
+pipenv run <insert command here>
+pipenv check [security check for vulnerabilities]
+
+pipenv uninstall numpy
+pipenv uninstall --all/--all-dev

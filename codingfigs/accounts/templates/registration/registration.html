@@ -1,0 +1,30 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mt-5 p-5 border border-light bg-light" style="margin-right:10%; margin-left:10%;">
+
+    <div class="row">
+        <div class="col text-center">
+            <img src="https://source.unsplash.com/1600x900/?register" height=500 width=500 alt="">
+        </div>
+        <div class="col border ">
+            <div class="container" style="margin:10%;">
+                <form action="" method="post">
+                    <fieldset>
+                        <legend>User registration</legend>
+
+                        {% csrf_token %}
+                        {{form | crispy}}
+                        <input class="m-2 btn btn-primary" type="submit" value="Submit">
+                        <p>Already registered? Go to <a href="{% url 'login' %}">Login</a> page.</p>
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}
